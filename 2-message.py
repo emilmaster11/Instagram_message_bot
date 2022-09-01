@@ -13,15 +13,15 @@ from selenium.webdriver.support import expected_conditions as EC
 def sendmessages():
     options=webdriver.ChromeOptions()
     options.add_argument("lang=de-DE,de,en-US,en")
-    options.add_argument("--user-data-dir=C:\\Users\\emilb\\Desktop\\Python_projekte\\BOTS\\Chrome_Profile\\GoogleChromeProfile2")
+    options.add_argument("--user-data-dir=Path to google Chrome Profile")
     options.add_argument("--profile-directory=Profile2")   
     options.add_argument(f'user-agent=Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.5195.58 Mobile Safari/537.36') 
         
-    driver = uc.Chrome(executable_path=r'C:\Users\emilb\Desktop\Python_projekte\BOTS\driver\chromedriver.exe',options=options)    
+    driver = uc.Chrome(executable_path=r'Path to Chromedriver.exe',options=options)    
     driver.maximize_window() 
 
     instagram = "https://www.instagram.com/"  #Variablen Initialisieren um sie für später zu nutzen.
-    name_der_txt_datei = r'C:\Users\emilb\Desktop\Business_mit_Nic\Insta_Bot\Oscar_Karem\oscar.karim.txt'  #Der Pfad zur Datei mit den Namen in einer Liste
+    name_der_txt_datei = r'Path to List of Users that the Programm will Message'  #Der Pfad zur Datei mit den Namen in einer Liste
     
     von_zeit = 1   #Zeitliche verzögerungen
     bis_zeit = 6 
@@ -37,7 +37,7 @@ def sendmessages():
     with open(name_der_txt_datei, 'r') as file:  #Leuten aus der Liste die Nachricht schreiben
      text = file.readlines()
     
-    schon_angeschrieben = open(r"C:\Users\emilb\Desktop\Business_mit_Nic\Insta_Bot\Oscar_Karem\angeschrieben.txt", 'r') #Ist die Liste mit den schon angeschriebenen Namen und Prüfen ob schon angeschrieben habe
+    schon_angeschrieben = open(r"Path to the File where the Bot see which user was already messaged", 'r') #Ist die Liste mit den schon angeschriebenen Namen und Prüfen ob schon angeschrieben habe
 
     for user in text:
 
@@ -76,7 +76,7 @@ def sendmessages():
       print("Nutzer existiert nicht")
 
       angeschrieben = [nutzer_name+"\n"]  #Der User der angeschrieben wurde.
-      with open(r'C:\Users\emilb\Desktop\Business_mit_Nic\Insta_Bot\Oscar_Karem\angeschrieben.txt', mode="a") as file:  #Fügt der Liste den User nach jedem Durchgang der Liste hinzu fall es mal abstürz oder zu lange dauert und damit es keine Duplicate gibt.
+      with open(r'Falls der User nicht exisiert wird er in die angeschrieben Liste hinzugefügt', mode="a") as file:  #Fügt der Liste den User nach jedem Durchgang der Liste hinzu fall es mal abstürz oder zu lange dauert und damit es keine Duplicate gibt.
         file.write('\n'.join(angeschrieben))
       
       continue
@@ -157,7 +157,7 @@ def sendmessages():
 
      try:
       angeschrieben = [nutzer_name+'\n']  #Der User der angeschrieben wurde.
-      with open(r'C:\Users\emilb\Desktop\Business_mit_Nic\Insta_Bot\Oscar_Karem\angeschrieben.txt', mode="a") as file:  #Fügt der Liste den User nach jedem Durchgang der Liste hinzu fall es mal abstürz oder zu lange dauert und damit es keine Duplicate gibt.
+      with open(r'Liste von angeschriebenen PFad angeben', mode="a") as file:  #Fügt der Liste den User nach jedem Durchgang der Liste hinzu fall es mal abstürz oder zu lange dauert und damit es keine Duplicate gibt.
         file.write('\n'.join(angeschrieben))
 
      except Exception as e:
