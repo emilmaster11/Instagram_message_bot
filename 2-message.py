@@ -10,12 +10,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support import expected_conditions as EC
 
-#Profil 3 ist Sunat u
-#Profil 2 ist Emil
-#Profil 5 ist Talha
-
-###Zeiten wann der Bot aktiv ist randomisieren.
-
 def sendmessages():
     options=webdriver.ChromeOptions()
     options.add_argument("lang=de-DE,de,en-US,en")
