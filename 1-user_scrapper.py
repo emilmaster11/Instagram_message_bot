@@ -11,10 +11,10 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 def main(profil_name):
     options=webdriver.ChromeOptions()
-    options.add_argument("--user-data-dir=C:\\Users\\emilb\\Desktop\\Python_projekte\\BOTS\\Chrome_Profile\\GoogleChromeProfile2")
+    options.add_argument("--user-data-dir=")
     options.add_argument("--profile-directory=Profile2")
     
-    driver = uc.Chrome(executable_path=r'C:\Users\emilb\Desktop\Python_projekte\BOTS\driver\chromedriver.exe',options=options)
+    driver = uc.Chrome(executable_path=r'',options=options)
     driver.get("https://www.instagram.com/"+profil_name+"/followers/")
     
     print("Programm wartet paar Sekunden")
@@ -53,7 +53,7 @@ def main(profil_name):
             print(exception)
 
 
-    user_mit_dupps = r"C:\Users\emilb\Desktop\Business_mit_Nic\Insta_Bot\Oscar_Karem\Oscars_user_mit_dupps.txt"
+    user_mit_dupps = r""
     
     with open(user_mit_dupps, mode="a") as file: 
      file.write("\n".join(user_liste_))
@@ -61,8 +61,8 @@ def main(profil_name):
      
 def dups_löschen():
 
-    input_file_path = r'C:\Users\emilb\Desktop\Business_mit_Nic\Insta_Bot\Oscar_Karem\Oscars_user_mit_dupps'   #Input ist mit Dups
-    output_file_path = r'C:\Users\emilb\Desktop\Business_mit_Nic\Insta_Bot\Oscar_Karem\oscar.karim.txt'  #Output ist ohne DUps
+    input_file_path = r''   #Input ist mit Dups
+    output_file_path = r''  #Output ist ohne DUps
 
     completed_lines_hash = set()
     output_file = open(output_file_path, 'r+')
@@ -80,5 +80,5 @@ def dups_löschen():
 
 
 if __name__ == "__main__":
-   main(profil_name="oscar.karem")
+   main(profil_name="#Name of the Instagram Profil")
    #dups_löschen()
